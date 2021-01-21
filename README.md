@@ -2,13 +2,19 @@
 
 This is a React Project that implements the Frontend test by Gavagai.
 
-## How to run
+## Requirements
+
+In the project directory, create a .env file with the API KEY
+
+### `REACT_APP_API_KEY=##################`
 
 To install dependencies, you can run:
 
 ### `yarn install`
 
-And to run the project, in the project directory, you can run:
+## How to run
+
+In the project directory, you can run:
 
 ### `yarn start`
 
