@@ -4,7 +4,11 @@ This is a React Project that implements the Frontend test by Gavagai.
 
 ## How to run
 
-In the project directory, you can run:
+To install dependencies, you can run:
+
+### `yarn install`
+
+And to run the project, in the project directory, you can run:
 
 ### `yarn start`
 
