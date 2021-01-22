@@ -6,20 +6,20 @@ interface useFetchProps {
 
 interface State {
   data: any;
-  isLoading: boolean;
+  isDataLoading: boolean;
 }
 
 export const useFetch = ({ url }: useFetchProps) => {
   const [state, setState] = useState<State>({
     data: [],
-    isLoading: true,
+    isDataLoading: true,
   });
 
   useEffect(() => {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        setState({ data, isLoading: false });
+        setState({ data, isDataLoading: false });
       });
   }, []);
 

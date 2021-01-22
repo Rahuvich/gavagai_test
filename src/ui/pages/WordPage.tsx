@@ -12,13 +12,13 @@ interface QueryParams {
 export const WordPage: React.FC<{}> = () => {
   let { word, lang } = useParams<QueryParams>();
 
-  const { data, isLoading } = useFetch({
+  const { data, isDataLoading } = useFetch({
     url: `https://api.gavagai.se/v3/lexicon/${lang}/${word}?additionalFields=SEMANTICALLY_SIMILAR_WORDS&apiKey=${process.env.REACT_APP_API_KEY}`,
   });
 
   return (
     <div className="w-full h-full flex flex-row justify-center">
-      {isLoading ? (
+      {isDataLoading ? (
         <LoadingComponent />
       ) : (
         <div className="flex flex-col h-full w-full p-5 max-w-screen-lg">

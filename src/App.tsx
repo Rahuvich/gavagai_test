@@ -6,11 +6,11 @@ import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import { WordPage } from "./ui/pages/WordPage";
 
 function App() {
-  const { data, isLoading } = useFetch({
+  const { data, isDataLoading } = useFetch({
     url: `https://api.gavagai.se/v3/languages?apiKey=${process.env.REACT_APP_API_KEY}`,
   });
 
-  const [state, setState] = useState<CallbackObject>({});
+  const [state, setState] = useState<CallbackObject>({ isLoading: false });
 
   return (
     <Router>
@@ -25,7 +25,7 @@ function App() {
             </Link>
             <Searchbar
               languages={data}
-              disabled={isLoading}
+              disabled={isDataLoading}
               onFetched={(data) => {
                 setState(data);
               }}
@@ -38,7 +38,7 @@ function App() {
           </Route>
           <Route path="/">
             <HomePage
-              isLoading={!state?.language && !state?.semanticallySimilarWords}
+              isLoading={state.isLoading}
               language={state?.language}
               semanticallySimilarWords={state?.semanticallySimilarWords}
             />
